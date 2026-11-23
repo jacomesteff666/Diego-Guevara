@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Guevara | Abogado - App Web Jurídica Integral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- BARRA DE CONTROL DEL PROTOTIPO (15 PANTALLAS) -->
+    <div class="prototype-bar">
+        <div class="container prototype-bar-inner">
+            <span><strong>Prototipo App Web Jurídica (15 Pantallas)</strong> — Abg. Diego Guevara</span>
+            <div>
+                <label for="screenSelector">Ir a pantalla: </label>
+                <select id="screenSelector" onchange="showScreen(this.value)">
+                    <option value="screen-1">01. Pantalla de Bienvenida (Splash)</option>
+                    <option value="screen-2">02. Pantalla de Introducción (Cómo Funciona)</option>
+                    <option value="screen-3" selected>03. Pantalla Principal (Home)</option>
+                    <option value="screen-4">04. Trayectoria y Metodología</option>
+                    <option value="screen-5">05. Especialidades (Búsqueda y Filtros)</option>
+                    <option value="screen-6">06. Detalle de Servicio y Requisitos</option>
+                    <option value="screen-7">07. Multimedia: Videos, Cuñas y Redes</option>
+                    <option value="screen-8">08. Formulario de Consulta Legal</option>
+                    <option value="screen-9">09. Pantalla de Confirmación de Trámite</option>
+                    <option value="screen-10">10. Inicio de Sesión (Portal Clientes)</option>
+                    <option value="screen-11">11. Registro de Nuevos Usuarios</option>
+                    <option value="screen-12">12. Recuperación de Contraseña</option>
+                    <option value="screen-13">13. Panel del Cliente (Mis Expedientes)</option>
+                    <option value="screen-14">14. Notificaciones y Alertas Procesales</option>
+                    <option value="screen-15">15. Perfil de Usuario, Edición y Configuración</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN PRINCIPAL -->
+    <header id="mainHeader">
+        <div class="container navbar">
+            <a href="#" onclick="showScreen('screen-3'); return false;" class="logo-link">
+                <img src="Diego.png" alt="Logo Diego Guevara Abogado">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><button onclick="showScreen('screen-3')">Inicio</button></li>
+                    <li><button onclick="showScreen('screen-4')">Trayectoria</button></li>
+                    <li><button onclick="showScreen('screen-5')">Especialidades</button></li>
+                    <li><button onclick="showScreen('screen-7')">Videos y Cuñas</button></li>
+                    <li><button onclick="showScreen('screen-10')" class="btn-nav-outline">Portal Clientes</button></li>
+                    <li><button onclick="showScreen('screen-8')" class="btn-nav">Agendar Consulta</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         PANTALLA 01: PANTALLA DE BIENVENIDA 
+    ========================================================= -->
+    <section id="screen-1" class="screen-view">
+        <div class="splash-screen">
+            <div class="splash-box">
+                <img src="Diego.png" alt="Logo Diego Guevara">
+                <span class="hero-badge">Estudio Jurídico en Tulcán - Carchi</span>
+                <h1>Respaldo legal y <span>defensa estratégica</span> a su alcance</h1>
+                <p>Bienvenido a la plataforma digital del Abg. Diego Guevara. Consulte nuestros servicios, escuche nuestras cápsulas legales o ingrese al portal para revisar el estado de su proceso judicial.</p>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <button onclick="showScreen('screen-2')" class="btn-primary">Conocer la Plataforma</button>
+                    <button onclick="showScreen('screen-3')" class="btn-secondary">Ir al Inicio</button>
+                    <button onclick="showScreen('screen-10')" class="btn-secondary">Acceso Clientes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 02: PANTALLA DE INTRODUCCIÓN 
+    ========================================================= -->
+    <section id="screen-2" class="screen-view page-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Guía Rápida</span>
+                <h2 class="section-title">¿Cómo funciona nuestra App Jurídica?</h2>
+                <p>Diseñada para brindar atención ágil, transparente y directa en toda la provincia del Carchi.</p>
+            </div>
+
+            <div class="onboarding-grid">
+                <div class="onboarding-card">
+                    <div class="onboarding-step">1</div>
+                    <h3 style="font-family: var(--serif); margin-bottom: 0.6rem;">Explore Especialidades</h3>
+                    <p style="color: var(--muted);">Filtre por materia legal, revise los requisitos previos de su trámite y consulte nuestros videos informativos.</p>
+                </div>
+                <div class="onboarding-card">
+                    <div class="onboarding-step">2</div>
+                    <h3 style="font-family: var(--serif); margin-bottom: 0.6rem;">Agende su Consulta</h3>
+                    <p style="color: var(--muted);">Envíe los detalles de su caso en línea y reciba confirmación inmediata para atención presencial o virtual.</p>
+                </div>
+                <div class="onboarding-card">
+                    <div class="onboarding-step">3</div>
+                    <h3 style="font-family: var(--serif); margin-bottom: 0.6rem;">Monitoree su Caso</h3>
+                    <p style="color: var(--muted);">Ingrese con su usuario al Portal de Clientes para recibir notificaciones de audiencias y escritos.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button onclick="showScreen('screen-3')" class="btn-primary">Comenzar Ahora</button>
+                <button onclick="showScreen('screen-1')" class="btn-navy" style="margin-left: 0.8rem;">Volver a Bienvenida</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 03: PANTALLA PRINCIPAL (Home)
+    ========================================================= -->
+    <section id="screen-3" class="screen-view active">
+        <div class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge">Más de 8 años de trayectoria jurídica</span>
+                    <h1>Defensa estratégica y <span>respaldo legal</span> en Tulcán</h1>
+                    <p>Asesoría jurídica integral con rigor técnico, ética profesional y soluciones efectivas en litigio y mediación para personas y empresas en la provincia del Carchi.</p>
+                    <div class="hero-buttons">
+                        <button onclick="showScreen('screen-8')" class="btn-primary">Solicitar Asesoría</button>
+                        <button onclick="showScreen('screen-5')" class="btn-secondary">Explorar Especialidades</button>
+                    </div>
+                </div>
+                <div class="hero-photo-showcase">
+                    <img src="abogado.jpeg" alt="Abg. Diego Guevara - Estudio Jurídico">
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>+8 Años</h3>
+                    <p>De Experiencia Profesional</p>
+                </div>
+                <div class="stat-item">
+                    <h3>6 Áreas</h3>
+                    <p>De Especialización Jurídica</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Confidencialidad y Compromiso</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container page-section">
+            <div class="section-header">
+                <span class="section-subtitle">Accesos Directos</span>
+                <h2 class="section-title">Servicios y Herramientas Digitales</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div>
+                        <h3>Catálogo de Servicios</h3>
+                        <p>Busque entre nuestras 6 ramas de práctica legal y revise requisitos documentales.</p>
+                    </div>
+                    <button onclick="showScreen('screen-5')" class="card-link-btn">Ir al buscador &rarr;</button>
+                </div>
+                <div class="service-card">
+                    <div>
+                        <h3>Videos, Cuñas y Redes</h3>
+                        <p>Acceda a cápsulas jurídicas, spots informativos y canales oficiales del estudio.</p>
+                    </div>
+                    <button onclick="showScreen('screen-7')" class="card-link-btn">Ver contenido multimedia &rarr;</button>
+                </div>
+                <div class="service-card">
+                    <div>
+                        <h3>Portal de Clientes</h3>
+                        <p>Revise el estado actual de sus causas, notificaciones y fechas de audiencia.</p>
+                    </div>
+                    <button onclick="showScreen('screen-10')" class="card-link-btn">Iniciar sesión &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 04: TRAYECTORIA Y METODOLOGÍA
+    ========================================================= -->
+    <section id="screen-4" class="screen-view page-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Perfil Profesional</span>
+                <h2 class="section-title">Compromiso con la seguridad jurídica</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Abg. Diego Guevara</h3>
+                    <p>Con más de ocho años de ejercicio profesional ininterrumpido en Tulcán, nuestro despacho brinda patrocinio judicial y asesoramiento preventivo adaptado a las necesidades reales de cada cliente.</p>
+                    <p>Combinamos el análisis exhaustivo de la normativa ecuatoriana con estrategias de negociación y mediación, buscando siempre la tutela efectiva de sus derechos y patrimonio en el menor tiempo posible.</p>
+                    <button onclick="showScreen('screen-8')" class="btn-primary" style="margin-top: 1rem;">Agendar Entrevista</button>
+                </div>
+
+                <div class="pillars-list">
+                    <div class="pillar-card">
+                        <h4><span>01.</span> Defensa Técnica Personalizada</h4>
+                        <p>Estudio detallado de cada expediente para diseñar estrategias jurídicas a la medida.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4><span>02.</span> Transparencia y Comunicación</h4>
+                        <p>Información clara y permanente sobre el avance procesal de su caso en cada instancia.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4><span>03.</span> Solución Alternativa de Conflictos</h4>
+                        <p>Priorizamos acuerdos eficientes mediante mediación cuando benefician los intereses del cliente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-grid" style="margin-top: 3rem;">
+                <div class="panel-card">
+                    <span class="step-number">01</span>
+                    <h4 style="margin-bottom: 0.5rem;">Consulta y Diagnóstico</h4>
+                    <p style="color: var(--muted);">Evaluamos los hechos, revisamos la documentación soporte y determinamos la viabilidad legal.</p>
+                </div>
+                <div class="panel-card">
+                    <span class="step-number">02</span>
+                    <h4 style="margin-bottom: 0.5rem;">Estrategia Legal</h4>
+                    <p style="color: var(--muted);">Definimos la ruta procesal más favorable, ya sea mediación o patrocinio judicial.</p>
+                </div>
+                <div class="panel-card">
+                    <span class="step-number">03</span>
+                    <h4 style="margin-bottom: 0.5rem;">Ejecución y Seguimiento</h4>
+                    <p style="color: var(--muted);">Representación firme en audiencias con reportes constantes hasta la resolución.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 05: ESPECIALIDADES (BÚSQUEDA Y FILTROS)
+    ========================================================= -->
+    <section id="screen-5" class="screen-view page-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Áreas de Práctica</span>
+                <h2 class="section-title">Especialidades Legales</h2>
+                <p>Filtre por categoría o busque un trámite específico para conocer requisitos y tiempos.</p>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" id="serviceSearch" class="search-input" placeholder="Buscar trámite (ej. alimentos, despido, contratos, herencias)..." onkeyup="filterServices()">
+                <div class="filter-chips">
+                    <button class="chip-btn active" onclick="setCategory('todos', this)">Todos</button>
+                    <button class="chip-btn" onclick="setCategory('privado', this)">Derecho Privado</button>
+                    <button class="chip-btn" onclick="setCategory('publico', this)">Derecho Público</button>
+                    <button class="chip-btn" onclick="setCategory('alternativo', this)">Mediación</button>
+                </div>
+            </div>
+
+            <div class="services-grid" id="servicesContainer">
+                <article class="service-card" data-category="privado">
+                    <div>
+                        <h3>Derecho Civil</h3>
+                        <p>Contratos, sucesiones, herencias, prescripción adquisitiva de dominio, cobro de deudas, inquilinato y litigios patrimoniales.</p>
+                    </div>
+                    <button onclick="openServiceDetail('Derecho Civil', 'Contratos, herencias, cobro de deudas y litigios patrimoniales.', ['Cédula de ciudadanía y papeleta de votación', 'Escrituras públicas o contratos originales', 'Certificado de gravámenes actualizado (si aplica)', 'Comprobantes o títulos ejecutivos de respaldo'], '15 a 45 días según vía')" class="card-link-btn">Ver detalles y requisitos &rarr;</button>
+                </article>
+
+                <article class="service-card" data-category="publico">
+                    <div>
+                        <h3>Derecho Penal</h3>
+                        <p>Defensa técnica en etapas de investigación previa, instrucción fiscal, audiencias de juicio, recursos de apelación y casación.</p>
+                    </div>
+                    <button onclick="openServiceDetail('Derecho Penal', 'Patrocinio en investigación previa, instrucción fiscal y audiencias.', ['Notificación fiscal o boleta de citación', 'Copia del parte policial o denuncia', 'Elementos de descargo y testigos disponibles', 'Autorización de patrocinio profesional'], 'Atención inmediata 24/7')" class="card-link-btn">Ver detalles y requisitos &rarr;</button>
+                </article>
+
+                <article class="service-card" data-category="privado">
+                    <div>
+                        <h3>Derecho Laboral</h3>
+                        <p>Despidos intempestivos, visto bueno, cálculo de liquidaciones, actas de finiquito, patrocinio a trabajadores y asesoría patronal.</p>
+                    </div>
+                    <button onclick="openServiceDetail('Derecho Laboral', 'Reclamo de haberes laborales, despido intempestivo y visto bueno.', ['Contrato de trabajo o mecanizado del IESS', 'Roles de pago de los últimos 6 meses', 'Acta de finiquito o notificación de salida', 'Mensajes o correos que prueben relación laboral'], '20 a 60 días (Procedimiento Sumario)')" class="card-link-btn">Ver detalles y requisitos &rarr;</button>
+                </article>
+
+                <article class="service-card" data-category="privado">
+                    <div>
+                        <h3>Niñez y Adolescencia</h3>
+                        <p>Juicios de alimentos, incidentes de aumento o rebaja de pensión, tenencia, régimen de visitas y autorizaciones de salida del país.</p>
+                    </div>
+                    <button onclick="openServiceDetail('Niñez y Adolescencia', 'Fijación, aumento o rebaja de pensiones alimenticias, tenencia y visitas.', ['Partida de nacimiento íntegra del menor', 'Copia de cédula del representante legal', 'Certificado bancario para acreditación', 'Pruebas de ingresos del alimentante (si se dispone)'], '10 a 30 días para pensión provisional')" class="card-link-btn">Ver detalles y requisitos &rarr;</button>
+                </article>
+
+                <article class="service-card" data-category="publico">
+                    <div>
+                        <h3>Derecho Administrativo</h3>
+                        <p>Impugnación de actos administrativos, sumarios administrativos, contratación pública y defensa ante instituciones del Estado.</p>
+                    </div>
+                    <button onclick="openServiceDetail('Derecho Administrativo', 'Defensa en sumarios administrativos e impugnación de resoluciones.', ['Resolución o acto administrativo notificado', 'Expediente administrativo completo', 'Acción de personal o contrato público', 'Pruebas documentales de descargo'], '30 a 90 días según instancia')" class="card-link-btn">Ver detalles y requisitos &rarr;</button>
+                </article>
+
+                <article class="service-card" data-category="alternativo">
+                    <div>
+                        <h3>Mediación</h3>
+                        <p>Resolución extrajudicial de conflictos con actas de mediación con fuerza de sentencia ejecutoriada, ahorrando tiempo y costos procesales.</p>
+                    </div>
+                    <button onclick="openServiceDetail('Mediación Extrajudicial', 'Acuerdos voluntarios con valor de sentencia ejecutoriada en centros autorizados.', ['Solicitud de mediación con datos de ambas partes', 'Copias de cédula de los intervinientes', 'Documentos del acuerdo o deuda a resolver', 'Dirección o contacto de la contraparte'], '5 a 12 días hábiles')" class="card-link-btn">Ver detalles y requisitos &rarr;</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 06: DETALLE DE PRODUCTO / SERVICIO
+    ========================================================= -->
+    <section id="screen-6" class="screen-view page-section">
+        <div class="container">
+            <button onclick="showScreen('screen-5')" class="btn-navy" style="margin-bottom: 1.5rem;">&larr; Volver a Especialidades</button>
+
+            <div class="detail-box">
+                <div>
+                    <span class="section-subtitle">Ficha Técnica del Servicio</span>
+                    <h2 id="detailTitle" class="section-title" style="text-align: left;">Derecho Civil</h2>
+                    <p id="detailDesc" style="color: var(--muted); margin-bottom: 1.8rem;">Contratos, sucesiones, herencias, prescripción adquisitiva de dominio, cobro de deudas, inquilinato y litigios patrimoniales.</p>
+
+                    <h3 style="font-family: var(--serif); margin-bottom: 1rem;">Documentación Sugerida para la Primera Cita</h3>
+                    <ul id="detailReqs" class="req-list">
+                        <li>Cédula de ciudadanía y papeleta de votación</li>
+                        <li>Escrituras públicas o contratos originales</li>
+                        <li>Certificado de gravámenes actualizado</li>
+                        <li>Comprobantes o títulos ejecutivos de respaldo</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h3 style="font-family: var(--serif); color: var(--gold); margin-bottom: 1rem;">Resumen de Atención</h3>
+                    <p style="margin-bottom: 0.8rem;"><strong>Tiempo estimado inicial:</strong><br><span id="detailTime" style="color: #cfd6e3;">15 a 45 días según vía</span></p>
+                    <p style="margin-bottom: 0.8rem;"><strong>Modalidad:</strong><br><span style="color: #cfd6e3;">Presencial en Tulcán o Videollamada</span></p>
+                    <p style="margin-bottom: 1.5rem;"><strong>Cobertura:</strong><br><span style="color: #cfd6e3;">Toda la provincia del Carchi</span></p>
+                    <button onclick="showScreen('screen-8')" class="btn-primary" style="width: 100%; text-align: center;">Agendar Consulta de esta Área</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 07: MULTIMEDIA (VIDEOS, CUÑAS Y REDES)
+    ========================================================= -->
+    <section id="screen-7" class="screen-view page-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Canal Informativo y Difusión</span>
+                <h2 class="section-title">Videos, Cuña Radial y Redes Sociales</h2>
+                <p>Conozca nuestro enfoque profesional a través de nuestras producciones audiovisuales, cuña informativa y canales oficiales.</p>
+            </div>
+
+            <!-- VIDEO PRINCIPAL DESTACADO (Abogado2.mp4) -->
+            <div class="featured-video-card">
+                <div class="featured-video-wrapper">
+                    <video src="Abogado2.mp4" controls poster="abogado.jpeg" preload="auto">
+                        Tu navegador no soporta la reproducción de video HTML5.
+                    </video>
+                </div>
+                <div class="featured-video-info">
+                    <span class="hero-badge" style="margin-bottom: 0.8rem;">Spot Principal</span>
+                    <h3>Defensa Estratégica y Asesoría Integral — Abg. Diego Guevara</h3>
+                    <p>Presentación oficial del estudio jurídico en Tulcán. Conozca cómo respaldamos sus derechos en materia civil, penal, laboral y mediación en toda la provincia del Carchi.</p>
+                </div>
+            </div>
+
+            <!-- VIDEOS SECUNDARIOS (Abogado1.mp4 e intro_diego.mp4) -->
+            <div class="secondary-videos-grid">
+                <div class="media-box">
+                    <div class="secondary-video-wrapper">
+                        <video src="Abogado1.mp4" controls preload="auto">
+                            Tu navegador no soporta la reproducción de video HTML5.
+                        </video>
+                    </div>
+                    <h4>Cápsula Jurídica: Patrocinio y Mediación</h4>
+                    <p>Información práctica sobre resolución efectiva de conflictos y atención personalizada en nuestro despacho.</p>
+                </div>
+
+                <div class="media-box">
+                    <div class="secondary-video-wrapper">
+                        <video src="Intro Diego.mp4" controls preload="auto">
+                            Tu navegador no soporta la reproducción de video HTML5.
+                        </video>
+                    </div>
+                    <h4>Identidad Audiovisual — Estudio Jurídico Diego Guevara</h4>
+                    <p>Presentación institucional de marca y canales de contacto directo para clientes en Tulcán.</p>
+                </div>
+            </div>
+
+            <!-- CUÑA RADIAL OFICIAL (cuna_final.mp3) -->
+            <div class="audio-showcase-card">
+                <div class="audio-showcase-text">
+                    <span class="section-subtitle">Difusión Radial</span>
+                    <h3>Cuña Publicitaria Oficial del Estudio</h3>
+                    <p>Escuche nuestro spot radial informativo sobre asesoría legal preventiva, litigio y mediación en el Carchi.</p>
+                </div>
+                <div class="audio-player-box">
+                    <strong>Spot Radial — Abg. Diego Guevara (Tulcán)</strong>
+                    <audio src="cuña final.mp3" controls preload="auto">
+                        Tu navegador no soporta la reproducción de audio HTML5.
+                    </audio>
+                </div>
+            </div>
+
+            <!-- REDES SOCIALES OFICIALES -->
+            <h3 style="font-family: var(--serif); text-align: center; font-size: 1.7rem; margin: 3.5rem 0 1.5rem;">Redes Sociales Oficiales</h3>
+            <div class="social-cards">
+                <a href="https://wa.me/593989840720" target="_blank" rel="noopener noreferrer" class="social-box">
+                    <strong>WhatsApp Directo</strong>
+                    <span>0989840720</span>
+                </a>
+                <a href="#" onclick="return false;" class="social-box">
+                    <strong>Instagram</strong>
+                    <span>@diegoguevara.abg</span>
+                </a>
+                <a href="#" onclick="return false;" class="social-box">
+                    <strong>Facebook</strong>
+                    <span>Abg. Diego Guevara - Estudio</span>
+                </a>
+                <a href="#" onclick="return false;" class="social-box">
+                    <strong>TikTok Legal</strong>
+                    <span>@diegoguevaralegal</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 08: FORMULARIOS (AGENDAR CONSULTA)
+    ========================================================= -->
+    <section id="screen-8" class="screen-view page-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Contacto Directo</span>
+                <h2 class="section-title">Agende su Consulta Legal</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información del Despacho</h3>
+                    <p>Atención presencial en el centro de Tulcán y asesoría previa vía telefónica o WhatsApp.</p>
+
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <strong>Dirección de Oficina:</strong>
+                            <span>Calle Panamá y Rafael Arellano, Tulcán - Ecuador</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div>
+                            <strong>Teléfono / WhatsApp:</strong>
+                            <span>0989840720</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <div>
+                            <strong>Horario de Atención:</strong>
+                            <span>Lunes a Viernes: 08:30 – 13:00 | 14:30 – 18:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="submitConsulta(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" placeholder="Ej. Carlos Andrade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" placeholder="Ej. 0991234567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="materia">Área de Consulta</label>
+                        <select id="materia" required>
+                            <option value="">Seleccione una especialidad...</option>
+                            <option value="Derecho Civil">Derecho Civil</option>
+                            <option value="Derecho Penal">Derecho Penal</option>
+                            <option value="Derecho Laboral">Derecho Laboral</option>
+                            <option value="Niñez y Adolescencia">Niñez y Adolescencia</option>
+                            <option value="Derecho Administrativo">Derecho Administrativo</option>
+                            <option value="Mediación">Mediación</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaCita">Fecha Preferida</label>
+                        <input type="date" id="fechaCita" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Breve descripción del caso</label>
+                        <textarea id="mensaje" rows="3" placeholder="Describa brevemente su situación legal..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Solicitud de Consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 09: PANTALLA DE CONFIRMACIÓN
+    ========================================================= -->
+    <section id="screen-9" class="screen-view page-section">
+        <div class="container">
+            <div class="confirm-box">
+                <div class="check-circle">&#10003;</div>
+                <span class="section-subtitle">Solicitud Registrada</span>
+                <h2 class="section-title">¡Consulta Agendada con Éxito!</h2>
+                <p id="confirmMessage" style="color: var(--muted); margin-bottom: 1.5rem;">Hemos recibido su solicitud de asesoría legal. Nuestro equipo se comunicará con usted a la brevedad.</p>
+
+                <div style="background: var(--bg); padding: 1.2rem; border-radius: 6px; margin-bottom: 2rem; text-align: left;">
+                    <p><strong>Código de Ticket:</strong> #DG-2026-084</p>
+                    <p><strong>Lugar:</strong> Calle Panamá y Rafael Arellano, Tulcán</p>
+                    <p><strong>Estado:</strong> <span class="badge-status status-active">Confirmado en Agenda</span></p>
+                </div>
+
+                <div class="hero-buttons" style="justify-content: center;">
+                    <button onclick="showScreen('screen-3')" class="btn-primary">Volver al Inicio</button>
+                    <button onclick="showScreen('screen-13')" class="btn-navy">Ir a Mis Expedientes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 10: INICIO DE SESIÓN (LOGIN)
+    ========================================================= -->
+    <section id="screen-10" class="screen-view page-section">
+        <div class="container">
+            <div class="auth-wrapper">
+                <div style="text-align: center; margin-bottom: 1.8rem;">
+                    <span class="section-subtitle">Portal de Clientes</span>
+                    <h2 style="font-family: var(--serif); font-size: 1.9rem;">Iniciar Sesión</h2>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Acceda al seguimiento de sus causas y documentos legales.</p>
+                </div>
+
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>Correo Electrónico o Cédula</label>
+                        <input type="text" value="carlos.andrade@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" value="••••••••••" required>
+                    </div>
+                    <div style="text-align: right; margin-bottom: 1.2rem;">
+                        <a href="#" onclick="showScreen('screen-12'); return false;" style="color: var(--gold); font-size: 0.88rem; font-weight: 600;">¿Olvidó su contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn-submit">Ingresar al Portal</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--muted);">
+                    ¿Aún no tiene cuenta? <a href="#" onclick="showScreen('screen-11'); return false;" style="color: var(--gold); font-weight: 700;">Regístrese aquí</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 11: REGISTRO DE USUARIOS
+    ========================================================= -->
+    <section id="screen-11" class="screen-view page-section">
+        <div class="container">
+            <div class="auth-wrapper">
+                <div style="text-align: center; margin-bottom: 1.8rem;">
+                    <span class="section-subtitle">Nuevo Cliente</span>
+                    <h2 style="font-family: var(--serif); font-size: 1.9rem;">Crear Cuenta</h2>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Registre sus datos para gestionar sus trámites en línea.</p>
+                </div>
+
+                <form onsubmit="showScreen('screen-13'); return false;">
+                    <div class="form-group">
+                        <label>Nombres y Apellidos</label>
+                        <input type="text" placeholder="Ej. María Fernanda López" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de Cédula / RUC</label>
+                        <input type="text" placeholder="Ej. 0401589632" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono Celular</label>
+                        <input type="tel" placeholder="0998765432" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="Mínimo 8 caracteres" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Completar Registro</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--muted);">
+                    ¿Ya posee una cuenta? <a href="#" onclick="showScreen('screen-10'); return false;" style="color: var(--gold); font-weight: 700;">Inicie sesión</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 12: RECUPERACIÓN DE CONTRASEÑA
+    ========================================================= -->
+    <section id="screen-12" class="screen-view page-section">
+        <div class="container">
+            <div class="auth-wrapper">
+                <div style="text-align: center; margin-bottom: 1.8rem;">
+                    <span class="section-subtitle">Seguridad de Cuenta</span>
+                    <h2 style="font-family: var(--serif); font-size: 1.9rem;">Recuperar Contraseña</h2>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Ingrese su correo registrado y le enviaremos un enlace de restablecimiento.</p>
+                </div>
+
+                <form onsubmit="alert('Se ha enviado un código de recuperación a su correo electrónico.'); showScreen('screen-10'); return false;">
+                    <div class="form-group">
+                        <label>Correo Electrónico Registrado</label>
+                        <input type="email" placeholder="cliente@ejemplo.com" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Enlace de Recuperación</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">
+                    <a href="#" onclick="showScreen('screen-10'); return false;" style="color: var(--gold); font-weight: 600;">&larr; Volver al Inicio de Sesión</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 13: FUNCIONALIDAD ESPECÍFICA (EXPEDIENTES)
+    ========================================================= -->
+    <section id="screen-13" class="screen-view page-section">
+        <div class="container">
+            <div class="dashboard-layout">
+                <aside class="sidebar-menu">
+                    <h4 style="color: var(--gold); font-family: var(--serif); margin-bottom: 1rem;">Menú del Cliente</h4>
+                    <button class="active" onclick="showScreen('screen-13')">Mis Expedientes</button>
+                    <button onclick="showScreen('screen-14')">Notificaciones (2)</button>
+                    <button onclick="showScreen('screen-15')">Mi Perfil y Configuración</button>
+                    <button onclick="showScreen('screen-8')">Nueva Consulta</button>
+                    <button onclick="showScreen('screen-10')" style="color: #f87171; margin-top: 1rem;">Cerrar Sesión</button>
+                </aside>
+
+                <div>
+                    <div class="panel-card">
+                        <span class="section-subtitle">Seguimiento Judicial</span>
+                        <h2 style="font-family: var(--serif); margin-bottom: 1.5rem;">Mis Causas y Trámites Activos</h2>
+
+                        <div style="border: 1px solid var(--border); padding: 1.5rem; border-radius: 6px; margin-bottom: 1.2rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.6rem;">
+                                <h4>Causa N° 04333-2026-00412 — Cobro de Pagaré a la Orden</h4>
+                                <span class="badge-status status-active">En Trámite - Audiencia Fijada</span>
+                            </div>
+                            <p style="color: var(--muted); font-size: 0.92rem; margin-bottom: 0.8rem;">Unidad Judicial Civil con sede en el cantón Tulcán. Última actuación: Providencia de calificación y citación.</p>
+                            <button onclick="showScreen('screen-14')" class="btn-navy" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Ver Última Notificación</button>
+                        </div>
+
+                        <div style="border: 1px solid var(--border); padding: 1.5rem; border-radius: 6px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.6rem;">
+                                <h4>Trámite N° MED-2026-089 — Acta de Mediación Laboral</h4>
+                                <span class="badge-status status-pending">Pendiente de Firma</span>
+                            </div>
+                            <p style="color: var(--muted); font-size: 0.92rem;">Centro de Mediación de la Función Judicial - Carchi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 14: NOTIFICACIONES
+    ========================================================= -->
+    <section id="screen-14" class="screen-view page-section">
+        <div class="container">
+            <div class="dashboard-layout">
+                <aside class="sidebar-menu">
+                    <h4 style="color: var(--gold); font-family: var(--serif); margin-bottom: 1rem;">Menú del Cliente</h4>
+                    <button onclick="showScreen('screen-13')">Mis Expedientes</button>
+                    <button class="active" onclick="showScreen('screen-14')">Notificaciones (2)</button>
+                    <button onclick="showScreen('screen-15')">Mi Perfil y Configuración</button>
+                    <button onclick="showScreen('screen-8')">Nueva Consulta</button>
+                    <button onclick="showScreen('screen-10')" style="color: #f87171; margin-top: 1rem;">Cerrar Sesión</button>
+                </aside>
+
+                <div class="panel-card">
+                    <span class="section-subtitle">Centro de Alertas</span>
+                    <h2 style="font-family: var(--serif); margin-bottom: 1.5rem;">Notificaciones Procesales</h2>
+
+                    <div class="notif-item">
+                        <div>
+                            <strong>Audiencia Única Programada — Causa 04333-2026-00412</strong>
+                            <p style="color: var(--muted); font-size: 0.9rem;">Se ha fijado audiencia para el día jueves 26 de noviembre de 2026 a las 10:30 en la Sala 2.</p>
+                        </div>
+                        <span class="badge-status status-active">Nuevo</span>
+                    </div>
+
+                    <div class="notif-item">
+                        <div>
+                            <strong>Escrito Presentado por el Despacho</strong>
+                            <p style="color: var(--muted); font-size: 0.9rem;">El Abg. Diego Guevara ha ingresado el escrito de prueba documental dentro del término legal.</p>
+                        </div>
+                        <span style="font-size: 0.82rem; color: var(--muted);">Hace 2 días</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PANTALLA 15: PERFIL DE USUARIO, EDICIÓN Y CONFIGURACIÓN
+    ========================================================= -->
+    <section id="screen-15" class="screen-view page-section">
+        <div class="container">
+            <div class="dashboard-layout">
+                <aside class="sidebar-menu">
+                    <h4 style="color: var(--gold); font-family: var(--serif); margin-bottom: 1rem;">Menú del Cliente</h4>
+                    <button onclick="showScreen('screen-13')">Mis Expedientes</button>
+                    <button onclick="showScreen('screen-14')">Notificaciones (2)</button>
+                    <button class="active" onclick="showScreen('screen-15')">Mi Perfil y Configuración</button>
+                    <button onclick="showScreen('screen-8')">Nueva Consulta</button>
+                    <button onclick="showScreen('screen-10')" style="color: #f87171; margin-top: 1rem;">Cerrar Sesión</button>
+                </aside>
+
+                <div>
+                    <div class="panel-card">
+                        <span class="section-subtitle">Datos Personales</span>
+                        <h2 style="font-family: var(--serif); margin-bottom: 1.2rem;">Perfil de Usuario y Edición</h2>
+                        <form onsubmit="alert('Datos de perfil actualizados correctamente.'); return false;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label>Nombre Completo</label>
+                                    <input type="text" value="Carlos Alberto Andrade">
+                                </div>
+                                <div class="form-group">
+                                    <label>Cédula de Identidad</label>
+                                    <input type="text" value="0401458921" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo Electrónico</label>
+                                    <input type="email" value="carlos.andrade@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Teléfono / WhatsApp</label>
+                                    <input type="tel" value="0991234567">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary">Guardar Cambios de Perfil</button>
+                        </form>
+                    </div>
+
+                    <div class="panel-card">
+                        <span class="section-subtitle">Preferencias</span>
+                        <h3 style="font-family: var(--serif); margin-bottom: 1rem;">Configuración de Cuenta y Alertas</h3>
+                        <div style="display: grid; gap: 0.8rem;">
+                            <label><input type="checkbox" checked> Recibir notificaciones de audiencias por WhatsApp</label>
+                            <label><input type="checkbox" checked> Enviar copia de escritos al correo electrónico</label>
+                            <label><input type="checkbox"> Activar verificación en dos pasos al iniciar sesión</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER GLOBAL -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="Diego.png" alt="Logo Diego Guevara Abogado">
+                    <p>Estudio jurídico liderado por el Abg. Diego Guevara. Más de 8 años brindando soluciones legales efectivas en Tulcán y toda la provincia del Carchi.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#" onclick="showScreen('screen-3'); return false;">Inicio</a></li>
+                        <li><a href="#" onclick="showScreen('screen-5'); return false;">Especialidades</a></li>
+                        <li><a href="#" onclick="showScreen('screen-7'); return false;">Videos y Cuñas</a></li>
+                        <li><a href="#" onclick="showScreen('screen-10'); return false;">Portal Clientes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>Panamá y Rafael Arellano, Tulcán</li>
+                        <li>Tel: 0989840720</li>
+                        <li>Lunes a Viernes: 08:30 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Diego Guevara - Abogado. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/593989840720?text=Hola%20Abg.%20Diego%20Guevara,%20deseo%20agendar%20una%20consulta%20legal." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+        </svg>
+    </a>
+
+    <script>
+        let currentCategory = 'todos';
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen-view').forEach(sec => sec.classList.remove('active'));
+            const target = document.getElementById(screenId);
+            if (target) target.classList.add('active');
+
+            const selector = document.getElementById('screenSelector');
+            if (selector) selector.value = screenId;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function setCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterServices();
+        }
+
+        function filterServices() {
+            const term = document.getElementById('serviceSearch').value.toLowerCase();
+            document.querySelectorAll('#servicesContainer .service-card').forEach(card => {
+                const matchesCat = currentCategory === 'todos' || card.dataset.category === currentCategory;
+                const matchesText = card.innerText.toLowerCase().includes(term);
+                card.style.display = (matchesCat && matchesText) ? 'flex' : 'none';
+            });
+        }
+
+        function openServiceDetail(title, desc, reqs, time) {
+            document.getElementById('detailTitle').textContent = title;
+            document.getElementById('detailDesc').textContent = desc;
+            document.getElementById('detailTime').textContent = time;
+
+            const list = document.getElementById('detailReqs');
+            list.innerHTML = '';
+            reqs.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                list.appendChild(li);
+            });
+
+            showScreen('screen-6');
+        }
+
+        function submitConsulta(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const materia = document.getElementById('materia').value;
+            const fecha = document.getElementById('fechaCita').value;
+
+            document.getElementById('confirmMessage').textContent =
+                `Estimado/a ${nombre}, hemos registrado su solicitud de consulta en ${materia} para el día ${fecha}.`;
+            showScreen('screen-9');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            showScreen('screen-13');
+        }
+    </script>
+</body>
+</html>
